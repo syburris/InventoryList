@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -19,8 +20,10 @@ public class Main {
 
             ArrayList<Tank> tanks = engineers.get(name);
             if(tanks == null) {
+                System.out.println("You haven't added any tanks yet.");
                 tanks = new ArrayList<>();
                 engineers.put(name, tanks);
+                System.out.println();
             }
 
             boolean isLoggedIn = true;
@@ -37,7 +40,7 @@ public class Main {
                     System.out.println();
                 }
 
-                System.out.println("1: Add another tank to your hospital's inventory.");
+                System.out.println("1: Add tanks to your hospital's inventory.");
                 System.out.println("2: Check/uncheck which tanks have been cleaned.");
                 System.out.println("3: View a list of all tanks currently added to your hospital's inventory.");
                 System.out.println("4: Remove a tank from your hospital's inventory list.");
@@ -48,10 +51,12 @@ public class Main {
                 switch (option) {
 
                     case "1":
-                        System.out.println("Enter the name of your tank.");
+                        System.out.println("Enter the size of your tank.");
                         String tankName = scanner.nextLine();
                         Tank tank = new Tank(tankName,false);
                         tanks.add(tank);
+                        System.out.println("How many of these tanks do you have?");
+                        String numberOfTanks = scanner.nextLine();
                         break;
 
                     case "2":
@@ -62,16 +67,16 @@ public class Main {
                         break;
 
                     case "3":
-//                        for (int t = 0; t < tanks.size(); t++) {
-//                            Tank tank3 = tanks.get(t);
-//                            int number = t + 1;
-//                            String checkbox = " {Has not been cleaned.} ";
-//                            if (tank3.hasBeenCleaned) {
-//                                checkbox = " {Has been cleaned.} ";
-//                            }
-//                            System.out.printf("%s %s %s", checkbox, number, tank3.tankNames);
-//                            System.out.println();
-//                        }
+                        for (int t = 0; t < tanks.size(); t++) {
+                            Tank tank3 = tanks.get(t);
+                            int number = t + 1;
+                            String checkbox = " {Has not been cleaned.} ";
+                            if (tank3.hasBeenCleaned) {
+                                checkbox = " {Has been cleaned.} ";
+                            }
+                            System.out.printf("%s %s %s", checkbox, number, tank3.tankNames);
+                            System.out.println();
+                        }
                         break;
 
                     case "4":
