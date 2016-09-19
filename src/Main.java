@@ -36,27 +36,28 @@ public class Main {
                     if (tank3.hasBeenCleaned) {
                         checkbox = " {Has been cleaned.} ";
                     }
-                    System.out.printf("%s %s %s", checkbox, number, tank3.tankNames);
-                    System.out.println();
+                    System.out.printf("%s %s %s\n", number, checkbox, tank3.tankNames);
                 }
-
+                System.out.println();
+                System.out.println("Here are your options:");
+                System.out.println();
                 System.out.println("1: Add tanks to your hospital's inventory.");
                 System.out.println("2: Check/uncheck which tanks have been cleaned.");
                 System.out.println("3: View a list of all tanks currently added to your hospital's inventory.");
                 System.out.println("4: Remove a tank from your hospital's inventory list.");
                 System.out.println("5: Log Out");
+                System.out.println("6: Change the quantity of listed tanks.");
 
                 String option = scanner.nextLine();
 
                 switch (option) {
 
                     case "1":
-                        System.out.println("Enter the size of your tank.");
+                        System.out.println("Enter the name of your tank.");
                         String tankName = scanner.nextLine();
-                        Tank tank = new Tank(tankName,false);
+                        Tank tank = new Tank(tankName,1,false);
                         tanks.add(tank);
-                        System.out.println("How many of these tanks do you have?");
-                        String numberOfTanks = scanner.nextLine();
+                        System.out.println();
                         break;
 
                     case "2":
@@ -73,8 +74,9 @@ public class Main {
                             String checkbox = " {Has not been cleaned.} ";
                             if (tank3.hasBeenCleaned) {
                                 checkbox = " {Has been cleaned.} ";
+                                System.out.println();
                             }
-                            System.out.printf("%s %s %s", checkbox, number, tank3.tankNames);
+                            System.out.printf("Tank %s %s %s", number, checkbox, tank3.tankNames);
                             System.out.println();
                         }
                         break;
@@ -88,6 +90,8 @@ public class Main {
                     case "5":
                         isLoggedIn = false;
                         break;
+                    case "6":
+
 
                     default:
                         System.out.println("You can't do that!");
