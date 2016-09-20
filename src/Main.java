@@ -1,11 +1,7 @@
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- * Created by stevenburris on 9/19/16.
- */
 public class Main {
 
 
@@ -14,12 +10,12 @@ public class Main {
         HashMap<String, ArrayList<Tank>> engineers = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             System.out.println("Please enter your name");
             String name = scanner.nextLine();
 
             ArrayList<Tank> tanks = engineers.get(name);
-            if(tanks == null) {
+            if (tanks == null) {
                 System.out.println("You haven't added any tanks yet.");
                 tanks = new ArrayList<>();
                 engineers.put(name, tanks);
@@ -55,7 +51,7 @@ public class Main {
                     case "1":
                         System.out.println("Enter the name of your tank.");
                         String tankName = scanner.nextLine();
-                        Tank tank = new Tank(tankName,1,false);
+                        Tank tank = new Tank(tankName, 1, false);
                         tanks.add(tank);
                         System.out.println();
                         break;
@@ -78,6 +74,7 @@ public class Main {
                             }
                             System.out.printf("Tank %s %s %s", number, checkbox, tank3.tankNames);
                             System.out.println();
+                            System.out.println();
                         }
                         break;
 
@@ -96,25 +93,9 @@ public class Main {
                     default:
                         System.out.println("You can't do that!");
                         break;
-
                 }
-
             }
-
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 }
+
