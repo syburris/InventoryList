@@ -72,7 +72,7 @@ public class Main {
                                 checkbox = " {Has been cleaned.} ";
                                 System.out.println();
                             }
-                            System.out.printf("%s %s %s %s tanks of this type.", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
+                            System.out.printf("%s %s %s, you have %s tanks of this type.", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
                             System.out.println();
                             System.out.println();
                         }
