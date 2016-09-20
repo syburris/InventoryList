@@ -6,4 +6,5 @@ import java.util.ArrayList;
 public class Engineers {
     String name;
     String password;
+    ArrayList<Tank> tanks = new ArrayList<>();
 }
