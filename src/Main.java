@@ -72,7 +72,7 @@ public class Main {
                                 checkbox = " {Has been cleaned.} ";
                                 System.out.println();
                             }
-                            System.out.printf("Tank %s %s %s", number, checkbox, tank3.tankNames);
+                            System.out.printf("Tank %s %s %s %s tanks", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
                             System.out.println();
                             System.out.println();
                         }
@@ -87,8 +87,15 @@ public class Main {
                     case "5":
                         isLoggedIn = false;
                         break;
-                    case "6":
 
+                    case "6":
+                        System.out.println("Which tank would you like to update the quantity of?");
+                        int index = Integer.valueOf(scanner.nextLine());
+                        System.out.println("What quantity would you like to have?");
+                        int quant = Integer.valueOf(scanner.nextLine());
+                        tanks.get(index - 1).numberOfTanks = quant;
+
+                        break;
 
                     default:
                         System.out.println("You can't do that!");
