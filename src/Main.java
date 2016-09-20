@@ -32,7 +32,7 @@ public class Main {
                     if (tank3.hasBeenCleaned) {
                         checkbox = " {Has been cleaned.} ";
                     }
-                    System.out.printf("%s %s %s\n", number, checkbox, tank3.tankNames);
+                    System.out.printf("%s %s %s %s tanks of this type\n", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
                 }
                 System.out.println();
                 System.out.println("Here are your options:");
@@ -72,7 +72,7 @@ public class Main {
                                 checkbox = " {Has been cleaned.} ";
                                 System.out.println();
                             }
-                            System.out.printf("%s %s %s %s tanks of this sort.", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
+                            System.out.printf("%s %s %s %s tanks of this type.", number, checkbox, tank3.tankNames, tank3.numberOfTanks);
                             System.out.println();
                             System.out.println();
                         }
